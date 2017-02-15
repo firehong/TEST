@@ -24,7 +24,7 @@ public class AccountServiceImpl extends BaseService implements AccountService{
 	public Serializable addNew(Account ac) {
 		Object[] param = {ac.getCode(),ac.getName(),ac.getNote(),ac.getStatus(),
 				ac.getCreated(),ac.getUpdated(),ac.getType(),ac.getIsactive()};
-		String sql = "insert into Account(code,name,note,status,created," +
+		String sql = "insert into account(code,name,note,status,created," +
 				"updated,type,isactive) values(" +
 				"?,?,?,?,?,?,?,?)";
 		Serializable id=baseDao.addOrUpdateOrDelete(sql,param,Account.class);
@@ -111,7 +111,7 @@ public class AccountServiceImpl extends BaseService implements AccountService{
 	@Override
 	public boolean deleteObject(Account ac) {
 		Object[] param = {ac.getUpdated(),ac.getCode()};
-		String sql = "update Account set isactive = 'N' ,updated=? where code = ? ";
+		String sql = "update account set isactive = 'N' ,updated=? where code = ? ";
 		baseDao.addOrUpdateOrDelete(sql,param,Account.class);
 		return true;
 	}
@@ -131,7 +131,7 @@ public class AccountServiceImpl extends BaseService implements AccountService{
 	public Serializable updateAccount(Account ac) {
 		Object[] param = {ac.getName(),ac.getStatus(),ac.getNote(),
 				ac.getUpdated(),ac.getCode()};
-		String sql = "update Account set name = ? , status=? " +
+		String sql = "update account set name = ? , status=? " +
 				" , note=? ,updated=? where code = ? ";
 		baseDao.addOrUpdateOrDelete(sql,param,Account.class);
 		return 1;

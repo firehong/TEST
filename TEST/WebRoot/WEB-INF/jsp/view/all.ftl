@@ -20,7 +20,7 @@
 		    var table =$('#example').DataTable({
 		            "info": false, 
 					    ajax: {
-					        url: 'http://localhost/TEST/account/all.do',
+					        url: 'all.do',
 					        dataSrc: ''
 			            },
             "columns": [
@@ -81,7 +81,7 @@
 			     var datestart = new Date(Date.parse(start)).getTime();
 			     var end = date.substring(13,date.length);
 	             var dateend = new Date(Date.parse(end)).getTime();
-		         table.ajax.url( 'http://localhost/TEST/account/timeall.do?start='+datestart+
+		         table.ajax.url( 'timeall.do?start='+datestart+
 		        '&&end='+dateend ).load();	
 		  });
 		    
